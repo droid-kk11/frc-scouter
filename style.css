@@ -1,0 +1,71 @@
+body {
+    background-color: rgb(240,240,240);
+    color: rgb(15,15,15);
+    font-family: Arial;
+}
+
+input[type=text], input[type=number] {
+    width: 200px;
+    height: 30px;
+    font-family: Arial;
+    font-size: 18px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(125,125,125);
+    background-color: rgb(240,240,240);
+    color: rgb(20,20,20);
+    border-width: 2px;
+}
+
+input[type=checkbox]{
+    border-color: rgb(125,125,125);
+    background-color: rgb(240,240,240);
+    border-width: 2px;
+    width: 20px;
+    height: 20px;
+}
+
+#first {
+    width: 100px;
+}
+
+#last {
+    width: 150px;
+}
+
+#match {
+    width:100px;
+}
+
+#button {
+    width: 50px;
+    height: 25px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(15,15,15);
+        color: rgb(240,240,240);
+        font-family: Arial;
+    }
+    input[type=text], input[type=number] {
+    width: 200px;
+    height: 30px;
+    font-family: Arial;
+    font-size: 18px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(125,125,125);
+    background-color: rgb(15,15,15);
+    color: rgb(235,235,235);
+    border-width: 2px;
+}
+
+    input[type=checkbox]{
+        border-color: rgb(125,125,125);
+        background-color: rgb(240,240,240);
+        border-width: 2px;
+        width: 20px;
+        height: 20px;
+    }
+}
