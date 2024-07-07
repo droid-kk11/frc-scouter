@@ -15,6 +15,8 @@
         <input id="teamno" type="number" placeholder="e.g. 2898 (not yours)"><br>
         <label for="match">Match Number:</label>
         <input id="match" type="number" placeholder="e.g. 15"><br>
+        <label for="score">Score:</label>
+        <input id="score" type="number" placeholder="e.g. 2"><br>
         <label for="swerve">Swerve?</label>
         <input id="swerve" type="checkbox"><br>
         <label for="defense">Defense?</label>
@@ -32,6 +34,17 @@
         <input id="ss4" type="checkbox"><br>
         <label for="ss5" id="ss5-label">Trap?</label>
         <input id="ss5" type="checkbox"><br>
+        <label for="ss6" id="ss6-label" style="display:none">Disabled</label>
+        <input id="ss6" type="checkbox" style="display:none"><br style="display:none">
+        <label for="ss7" id="ss7-label" style="display:none">Disabled</label>
+        <input id="ss7" type="checkbox" style="display:none"><br style="display:none">
+        <label for="ss8" id="ss8-label" style="display:none">Disabled</label>
+        <input id="ss8" type="checkbox" style="display:none"><br style="display:none">
+        <label for="ss9" id="ss9-label" style="display:none">Disabled</label>
+        <input id="ss9" type="checkbox" style="display:none"><br style="display:none">
+        <label for="ss10" id="ss10-label" style="display:none">Disabled</label>
+        <input id="ss10" type="checkbox" style="display:none"><br style="display:none">
+        <br>
         <button onclick="generateQRCode();" id="button">Done?</button>
         <div id="qrcode"></div>
         <script src="qrcodejs/qrcode.js"></script>
