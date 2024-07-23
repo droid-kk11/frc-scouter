@@ -7,6 +7,7 @@ function generateQRCode(){
     let swerve = document.getElementById("swerve").checked ? "yes" : "no";
     let defense = document.getElementById("defense").checked ? "yes" : "no";
     let offense = document.getElementById("offense").checked ? "yes" : "no";
+    let score = docment.getElementById("score").value;
     let ss1 = document.getElementById("ss1").checked ? "yes" : "no";
     let ss1_label = document.getElementById("ss1-label").innerHTML;
     let ss2 = document.getElementById("ss2").checked ? "yes" : "no";
@@ -30,7 +31,7 @@ function generateQRCode(){
                     + addLeadingZero(current_date.getMinutes()) + ":" 
                     + addLeadingZero(current_date.getSeconds());
 
-    let output = `SCOUTING DATA:
+    /*let qr_output = `SCOUTING DATA:
 Date: ${datetime}
 Event location: ${location}
 Scouter's name: ${first_name} ${last_name}
@@ -43,12 +44,18 @@ ${ss2_label} ${ss2}
 ${ss3_label} ${ss3}
 ${ss4_label} ${ss4}
 ${ss5_label} ${ss5}
-USING SCOUTING APP BY TEAM 2898`;
+USING SCOUTING APP BY TEAM 2898`;*/
+    let csv_output = `2898 SCOUTING APP
+Date,Location,Scouter First,Scouter Last,Match,Team,Swerve,Defense,Offense
+${datetime},${location},${first_name},${last_name},${match_number},${team_number},${swerve},${defense},${offense}
+Score,${ss1_label},${ss2_label},${ss3_label},${ss4_label},${ss5_label}
+${score},${ss1},${ss2},${ss3},${ss4},${ss5}
+END SCOUTING DATA`
 
-    output = output.replace(/\?/g, ":");
+    csv_output = qr_output.replace(/\?/g, ":");
 
     //alert(output);
     /*const blob = new Blob([output], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);*/
-    new QRCode(document.getElementById("qrcode"), output);
+    new QRCode(document.getElementById("qrcode"), qr_output);
 }
