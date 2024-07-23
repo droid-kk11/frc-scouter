@@ -57,5 +57,5 @@ END SCOUTING DATA`
     //alert(output);
     /*const blob = new Blob([output], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);*/
-    new QRCode(document.getElementById("qrcode"), qr_output);
+    alert(csv_output);
 }
