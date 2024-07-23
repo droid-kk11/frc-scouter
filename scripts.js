@@ -1,4 +1,4 @@
-function generateQRCode(){
+function generateQRCode() {
     let location = document.getElementById("location").value;
     let first_name = document.getElementById("first").value;
     let last_name = document.getElementById("last").value;
@@ -7,7 +7,7 @@ function generateQRCode(){
     let swerve = document.getElementById("swerve").checked ? "yes" : "no";
     let defense = document.getElementById("defense").checked ? "yes" : "no";
     let offense = document.getElementById("offense").checked ? "yes" : "no";
-    let score = docment.getElementById("score").value;
+    let score = document.getElementById("score").value;
     let ss1 = document.getElementById("ss1").checked ? "yes" : "no";
     let ss1_label = document.getElementById("ss1-label").innerHTML;
     let ss2 = document.getElementById("ss2").checked ? "yes" : "no";
@@ -22,14 +22,14 @@ function generateQRCode(){
     function addLeadingZero(num) {
         return num < 10 ? '0' + num : num;
     }
-    
+
     let current_date = new Date();
     let datetime = current_date.getFullYear() + "-"
-                    + addLeadingZero(current_date.getMonth() + 1) + "-"
-                    + addLeadingZero(current_date.getDate()) + "@"
-                    + addLeadingZero(current_date.getHours()) + ":"  
-                    + addLeadingZero(current_date.getMinutes()) + ":" 
-                    + addLeadingZero(current_date.getSeconds());
+        + addLeadingZero(current_date.getMonth() + 1) + "-"
+        + addLeadingZero(current_date.getDate()) + "@"
+        + addLeadingZero(current_date.getHours()) + ":"
+        + addLeadingZero(current_date.getMinutes()) + ":"
+        + addLeadingZero(current_date.getSeconds());
 
     /*let qr_output = `SCOUTING DATA:
 Date: ${datetime}
@@ -53,9 +53,7 @@ ${score},${ss1},${ss2},${ss3},${ss4},${ss5}
 END SCOUTING DATA`
 
     csv_output = qr_output.replace(/\?/g, ":");
-
-    //alert(output);
-    /*const blob = new Blob([output], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);*/
+    const file = new Blob([csv_output], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
     alert(csv_output);
 }
