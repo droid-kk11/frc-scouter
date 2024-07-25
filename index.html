@@ -2,50 +2,82 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
         <link rel="stylesheet" href="style.css">
         <title>2898 Scouter</title>
     </head>
     <body>
-        <h1>Scouting App by Team 2898</h1>
-        <label for="location">Event location:</label>
-        <input id="location" type="text" placeholder="e.g. Portland, OR"><br>
-        <label for="first">Scouter name:</label>
-        <input id="first" type="text" placeholder="First"><input id="last" type="text" placeholder="Last"><br>
-        <label for="teamno">Team Number:</label>
-        <input id="teamno" type="number" placeholder="e.g. 2898 (not yours)"><br>
-        <label for="match">Match Number:</label>
-        <input id="match" type="number" placeholder="e.g. 15"><br>
-        <label for="score">Score:</label>
-        <input id="score" type="number" placeholder="e.g. 2"><br>
-        <label for="swerve">Swerve?</label>
-        <input id="swerve" type="checkbox"><br>
-        <label for="defense">Defense?</label>
-        <input id="defense" type="checkbox"><br>
-        <label for="offense">Offense?</label>
-        <input id="offense" type="checkbox"><br>
-        <h2>Season-specific</h2>
-        <label for="ss1" id="ss1-label">Speaker?</label>
-        <input id="ss1" type="checkbox"><br>
-        <label for="ss2" id="ss2-label">Amp?</label>
-        <input id="ss2" type="checkbox"><br>
-        <label for="ss3" id="ss3-label">Harmony?</label>
-        <input id="ss3" type="checkbox"><br>
-        <label for="ss4" id="ss4-label">Climb?</label>
-        <input id="ss4" type="checkbox"><br>
-        <label for="ss5" id="ss5-label">Trap?</label>
-        <input id="ss5" type="checkbox"><br>
-        <label for="ss6" id="ss6-label" style="display:none">Disabled</label>
-        <input id="ss6" type="checkbox" style="display:none"><br style="display:none">
+        <h1 class="title is-1">Scouting App</h1>
+        <h2 class="subtitle is-2">By Team 2898</h2>
+        <p class="is-size-5">Tip: On a computer, press TAB to switch checkbox/text field, and SPACE to check a checkbox.</p>
+        <div class="grid is-col-min-10">
+            <div class="cell"><label for="location">Event location:</label>
+                <input class="input" id="location" type="text" placeholder="e.g. Portland, OR"></div>
+            <div class="cell"><label for="first">Scouter name:</label>
+                <input class="input" id="first" type="text" placeholder="First"><input class="input" id="last" type="text" placeholder="Last"></div>
+            <div class="cell"><label for="teamno">Team Number:</label>
+                <input class="input" id="teamno" type="number" placeholder="e.g. 2898 (not yours)"><br></div>
+            <div class="cell"><label for="match">Match Number:</label>
+                <input class="input" id="match" type="number" placeholder="e.g. 15"><br></div>
+            <div class="cell"><label for="score">Score:</label>
+                <input class="input" id="score" type="number" placeholder="e.g. 2"><br></div>
+            <div class="cell"><label for="swerve">Swerve notes:</label>
+                <input class="input" id="swerve" type="text" placeholder=""><br></div>
+            <div class="cell"><label for="defense">Defense notes:</label>
+                <input class="input" id="defense" type="text" placeholder=""><br></div>
+            <div class="cell"><label for="offense">Offense notes:</label>
+                <input class="input" id="offense" type="text" placeholder=""><br></div>
+            <div class="cell"><label class="checkbox is-size-6">
+                <input type="checkbox" id="dropped" />
+                Dropped items?
+              </label></div>
+            <div class="cell"><label class="checkbox is-size-6">
+                <input type="checkbox" id="died" />
+                Died?
+              </label></div>
+            <div class="cell"><label for="drive">Drive rating (0-10):</label>
+                <input class="input" id="drive" type="number" placeholder="e.g. 4" max="10" min="0"><br></div>
+            <div class="cell"><label for="speed">Speed rating (0-10):</label>
+                <input class="input" id="speed" type="number" placeholder="e.g. 6" max="10" min="0"><br></div>
+          </div>
+        </label><br></div>
+        <h2 class="subtitle is-2">Season-specific</h2>
+        <div class="grid is-col-min-8">
+            <div class="cell"><label class="checkbox is-size-6">
+                <input type="checkbox" id="ss1" />
+                Speaker?
+            </label><br></div>
+            <div class="cell"><label class="checkbox is-size-6">
+                <input type="checkbox" id="ss2" />
+                Amp?
+            </label><br></div>
+            <div class="cell"><label class="checkbox is-size-6">
+                <input type="checkbox" id="ss3" />
+                Harmony?
+            </label><br></div>
+            <div class="cell"><label class="checkbox is-size-6">
+                <input type="checkbox" id="ss4" />
+                Climb?
+            </label><br></div>
+            <div class="cell"><label class="checkbox is-size-6">
+                <input type="checkbox" id="ss5" />
+                Trap?
+            </label><br></div>
+          </div>
+        <!--<label for="ss6" id="ss6-label" style="display:none">Disabled</label>
+        <input class="input" id="ss6" type="checkbox" style="display:none"><br style="display:none">
         <label for="ss7" id="ss7-label" style="display:none">Disabled</label>
-        <input id="ss7" type="checkbox" style="display:none"><br style="display:none">
+        <input class="input" id="ss7" type="checkbox" style="display:none"><br style="display:none">
         <label for="ss8" id="ss8-label" style="display:none">Disabled</label>
-        <input id="ss8" type="checkbox" style="display:none"><br style="display:none">
+        <input class="input" id="ss8" type="checkbox" style="display:none"><br style="display:none">
         <label for="ss9" id="ss9-label" style="display:none">Disabled</label>
-        <input id="ss9" type="checkbox" style="display:none"><br style="display:none">
+        <input class="input" id="ss9" type="checkbox" style="display:none"><br style="display:none">
         <label for="ss10" id="ss10-label" style="display:none">Disabled</label>
-        <input id="ss10" type="checkbox" style="display:none"><br style="display:none">
-        <br>
-        <button onclick="generateQRCode();" id="button">Done?</button>
+        <input class="input" id="ss10" type="checkbox" style="display:none"><br style="display:none">
+    --><br>
+        <button onclick="generateFile();" class="button">Create file</button>
+        <button class="button">Add to local storage</button>
+        <button class="button" onclick="help();">Help</button>
         <div id="qrcode"></div>
         <script src="qrcodejs/qrcode.js"></script>
         <script src="scripts.js"></script>

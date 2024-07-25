@@ -1,68 +1,8 @@
-body {
-    background-color: rgb(240,240,240);
-    color: rgb(15,15,15);
-    font-family: Arial;
+.grid {
+    padding: 10px;
 }
 
-input {
-    border-color: rgb(125,125,125);
-    background-color: rgb(240,240,240);
-}
-
-input[type=text], input[type=number] {
-    width: 200px;
-    height: 30px;
-    font-family: Arial;
-    font-size: 18px;
-    border-radius: 10px;
-    border-style: solid;
-    color: rgb(20,20,20);
-    border-width: 2px;
-}
-
-input[type=checkbox]::before{
-    border-width: 2px;
-    width: 50px !important;
-    height: 50px !important;
-}
-
-#first {
-    width: 100px;
-}
-
-#last {
-    width: 150px;
-}
-
-#match, #score {
-    width:100px;
-}
-
-#button {
-    width: 50px;
-    height: 25px;
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: rgb(15,15,15);
-        color: rgb(240,240,240);
-        font-family: Arial;
-    }
-    input[type=text], input[type=number] {
-    width: 200px;
-    height: 30px;
-    font-family: Arial;
-    font-size: 18px;
-    border-radius: 10px;
-    border-style: solid;
-    border-color: rgb(125,125,125);
-    background-color: rgb(15,15,15);
-    color: rgb(235,235,235);
-    border-width: 2px;
-    }
-
-    input[type=checkbox]::before{
-        background-color: rgb(15,15,15) !important;
-    }
+h1, h2, h3, h4, h5, h6, p {
+    margin-left: 3px;
+    margin-right: 3px;
 }
