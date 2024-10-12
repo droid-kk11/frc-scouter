@@ -6,3 +6,8 @@ h1, h2, h3, h4, h5, h6, p {
     margin-left: 3px;
     margin-right: 3px;
 }
+
+@keyframes fade-in{
+    from{opacity: 100%;}
+    to{opacity: 0%;}
+}
