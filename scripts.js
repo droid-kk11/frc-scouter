@@ -41,8 +41,8 @@ ${datetime},${location},${first_name},${last_name},${match_number},${team_number
 END_DATA`;
 
     const [allAnswered, unanswered_qs] = checkIfUnanswered();
-    alert(allAnswered);
-    alert(unanswered_qs);
+    //alert(allAnswered);
+    //alert(unanswered_qs);
 
     if (allAnswered) {
         csv_output = csv_output.replace(/\?/g, "");
