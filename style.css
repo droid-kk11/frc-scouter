@@ -8,6 +8,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @keyframes fade-in{
+    from{opacity: 0%;}
+    to{opacity: 100%;}
+}
+
+@keyframes fade-out{
     from{opacity: 100%;}
     to{opacity: 0%;}
 }
