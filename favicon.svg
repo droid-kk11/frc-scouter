@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="192"
+   height="192"
+   viewBox="0 0 50.799999 50.8"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <rect
+       style="fill:#2c5aa0;stroke:#86daf6;stroke-width:127;stroke-linecap:round;stroke-opacity:0"
+       id="rect1"
+       width="41.274998"
+       height="41.274998"
+       x="-48.154598"
+       y="-43.727089"
+       ry="0"
+       transform="rotate(-175)" />
+    <rect
+       style="fill:#3771c8;stroke:#86daf6;stroke-width:127;stroke-linecap:round;stroke-opacity:0"
+       id="rect1-8"
+       width="33.866665"
+       height="33.866665"
+       x="-44.450432"
+       y="-40.022923"
+       ry="0"
+       transform="rotate(-175)" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:8.46667px;font-family:Overpass;-inkscape-font-specification:'Overpass Bold';fill:#f9f9f9;stroke:#86daf6;stroke-width:127;stroke-linecap:round;stroke-opacity:0"
+       x="11.586622"
+       y="17.830797"
+       id="text1"><tspan
+         id="tspan1"
+         style="fill:#f9f9f9;stroke-width:127"
+         x="11.586622"
+         y="17.830797">FRC</tspan><tspan
+         style="fill:#f9f9f9;stroke-width:127"
+         x="11.586622"
+         y="28.414135"
+         id="tspan2">SCOUT</tspan><tspan
+         style="fill:#f9f9f9;stroke-width:127"
+         x="11.586622"
+         y="38.997471"
+         id="tspan3">APP</tspan></text>
+  </g>
+</svg>
