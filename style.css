@@ -7,6 +7,10 @@ h1, h2, h3, h4, h5, h6, p {
     margin-right: 3px;
 }
 
+body !important{
+    background-color: #363f8a;
+}
+
 @keyframes fade-in{
     from{opacity: 0%;}
     to{opacity: 100%;}
