@@ -48,7 +48,7 @@ END_DATA`;
         csv_output = csv_output.replace(/\?/g, "");
         const file = new Blob([csv_output], { type: 'text/csv' });
         const url = URL.createObjectURL(file);
-        alert(csv_output);
+        //alert(csv_output);
 
         const a = document.createElement("a");
         a.href = url;
