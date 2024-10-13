@@ -23,7 +23,7 @@
                 Use local storage
             </label><br>
             <button class="button" onclick="generateFile()">Create file</button>
-            <button class="button" onclick="document.getElementById('file-dialog').style.display = 'none';">Cancel</button>
+            <button class="button" onclick="document.getElementById('file-dialog').style.animation='fade-out 1s';document.getElementById('file-dialog').style.display='none';">Cancel</button>
         </div>
         <h1 class="title is-1" style="text-align:center;">Scouting App</h1>
         <h2 class="subtitle is-2" style="text-align:center;">By Team 2898</h2>
@@ -93,7 +93,7 @@
         <label for="ss10" id="ss10-label" style="display:none">Disabled</label>
         <input class="input" id="ss10" type="checkbox" style="display:none"><br style="display:none">
     --><br>
-        <button onclick="document.getElementById('file-dialog').style.display='block';document.getElementById('file-dialog').style.animation='fade-in 2s';" class="button">Create file</button>
+        <button onclick="document.getElementById('file-dialog').style.display='block';document.getElementById('file-dialog').style.animation='fade-in 1s';" class="button">Create file</button>
         <button class="button">Add to local storage</button>
         <button class="button" onclick="help();">Help</button>
         <div id="qrcode"></div>
