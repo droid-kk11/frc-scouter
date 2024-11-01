@@ -1,3 +1,18 @@
+var deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    showInstallPromotion();
+    console.log("Install promoted!");
+});
+
+window.addEventListener("appinstalled", () => {
+    hideInstallPromotion();
+    deferredPrompt = null;
+    console.log("App installed!");
+});
+
 function generateFile() {
     var location = document.getElementById("location").value;
     var first_name = document.getElementById("first").value;
