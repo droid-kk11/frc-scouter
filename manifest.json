@@ -1,0 +1,13 @@
+{
+  "short_name": "Scouter",
+  "name":"2898 Scouter",
+  "icons":[
+    {
+      "src": "images/2898-icon.svg",
+      "sizes": "192x192",
+      "type": "image/svg"
+    }
+  ],
+  "display": "standalone",
+  "theme_color": "#2c5aa0"
+}
