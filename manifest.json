@@ -9,5 +9,6 @@
     }
   ],
   "display": "standalone",
-  "theme_color": "#2c5aa0"
+  "theme_color": "#2c5aa0",
+  "start_url": "https://droid-kk11.github.io/frc-scouter"
 }
