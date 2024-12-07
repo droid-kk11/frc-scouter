@@ -139,7 +139,7 @@ Create file: Uses the current scout data and data in local storage (if applicabl
 }
 
 function checkIfLocalStorageInitialized(){
-    if (!localStorage.getItem("scoutnumber") === null && !localStorage.getItem("scoutdata") === null){
+    if (localStorage.getItem("scoutnumber") != null && localStorage.getItem("scoutdata") != null){
         console.log("Scouter data exists!");
     }
 
