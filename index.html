@@ -10,7 +10,7 @@
         <link rel="apple-touch-icon" href="images/2898-icon.svg">
         <link rel="manifest" href="manifest.json">
     </head>
-    <body>
+    <body onload="checkIfLocalStorageInitialized();importScoutingData();">
         <div class="box" style="display:none" id="file-dialog">
             <h2 class="subtitle is-2">Create file</h2>
             <p>File type:</p>
@@ -23,7 +23,11 @@
             
             <label class="checkbox">
                 <input type="checkbox" id="ls"/>
-                Use local storage
+                Import from local storage <span id="lsavailability">(foobar)</span>
+            </label><br>
+            <label class="checkbox">
+                <input type="checkbox" id="cls"/>
+                Clear local storage (recommended after each competition)
             </label><br>
             <button class="button" onclick="generateFile()">Create file</button>
             <button class="button" onclick="document.getElementById('file-dialog').style.animation='fade-out 1s';document.getElementById('file-dialog').style.display='none';">Cancel</button>
