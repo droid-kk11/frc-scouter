@@ -10,100 +10,146 @@
         <link rel="apple-touch-icon" href="images/2898-icon.svg">
         <link rel="manifest" href="manifest.json">
     </head>
-    <body onload="checkIfLocalStorageInitialized();importScoutingData();">
+    <body onload="document.getElementById('import-dialog').parentNode.innerHTML = document.getElementById('import-dialog').parentNode.innerHTML;checkIfLocalStorageInitialized();importScoutingData();">
         <div class="box" style="display:none" id="file-dialog">
             <h2 class="subtitle is-2">Create file</h2>
-            <p>File type:</p>
-            <div class="select">
-                <select id="filetype">
-                  <option>CSV</option>
-                  <option>QR Code</option>
-                </select>
-              </div><br>
-            
             <label class="checkbox">
                 <input type="checkbox" id="ls"/>
                 Import from local storage <span id="lsavailability">(foobar)</span>
             </label><br>
             <label class="checkbox">
-                <input type="checkbox" id="cls"/>
-                Clear local storage (recommended after each competition)
+                <input type="checkbox" id="cls" />
+                Clear local storage (recommended every once in a while)
             </label><br>
+            <br>
             <button class="button" onclick="generateFile()">Create file</button>
             <button class="button" onclick="document.getElementById('file-dialog').style.animation='fade-out 1s';document.getElementById('file-dialog').style.display='none';">Cancel</button>
+        </div>
+        <div class="box" style="display:none" id="import-dialog">
+            <h2 class="subtitle is-2">Import file(s)</h2>
+            <p>Click the button below to upload file(s).</p>
+            <input type="file" id="uploaded-files" multiple>
+            <br>
+            <br>
+            <button class="button" onclick="importFiles();">Import to local storage</button>
+            <button class="button" onclick="document.getElementById('import-dialog').style.display = 'none';">Cancel</button>
         </div>
         <h1 class="title is-1" style="text-align:center;">Scouting App</h1>
         <h2 class="subtitle is-2" style="text-align:center;">By Team 2898</h2>
         <p class="is-size-5">Tip: On a computer, press TAB/SHIFT-TAB to switch checkbox/text field, and SPACE to check a checkbox.</p>
         <div class="grid is-col-min-10">
-            <div class="cell"><label for="location">Event location:</label>
-                <input class="input" id="location" type="text" placeholder="e.g. Portland, OR"></div>
+            <div class="cell"><label for="location">Event location (do not use commas!):</label>
+                <input class="input" id="location" type="text" placeholder="e.g. Portland OR" list="locations"></div>
+                <datalist id="locations">
+                    <option>2898 Meeting Location</option>
+                    <option>Beaverton OR</option>
+                    <option>Portland OR</option>
+                    <option>Salem OR</option>
+                    <option>Wilsonville OR</option>
+                    <option>Camas WA</option>
+                    <option>Vancouver WA</option>
+                </datalist>
             <div class="cell"><label for="first">Scouter name:</label>
-                <input class="input" id="first" type="text" placeholder="First"><input class="input" id="last" type="text" placeholder="Last"></div>
+                <input class="input" id="first" type="text" placeholder="First" autocomplete="yes"><input class="input" id="last" type="text" placeholder="Last" autocomplete="yes"></div>
             <div class="cell"><label for="teamno">Team Number:</label>
-                <input class="input" id="teamno" type="number" placeholder="e.g. 2898 (not yours)"><br></div>
-            <div class="cell"><label for="match">Match Number:</label>
-                <input class="input" id="match" type="number" placeholder="e.g. 15"><br></div>
-            <div class="cell"><label for="score">Score:</label>
-                <input class="input" id="score" type="number" placeholder="e.g. 2"><br></div>
+                <input class="input" value="" id="teamno" type="number" placeholder="e.g. 2898 (not yours)" list="teams"><br></div>
+                <datalist id="teams">
+                    <option>997</option>
+                    <option>1540</option>
+                    <option>1844</option>
+                    <option>2374</option>
+                    <option>2521</option>
+                    <option>2635</option>
+                    <option>2733</option>
+                    <option>2898</option>
+                    <option>3636</option>
+                    <option>3674</option>
+                    <option>4043</option>
+                    <option>5970</option>
+                    <option>6443</option>
+                    <option>6465</option>
+                    <option>6696</option>
+                    <option>7034</option>
+                    <option>7448</option>
+                    <option>9996</option>
+                    <option>9997</option>
+                    <option>9998</option>
+                    <option>9999</option>
+                </datalist>
+            <div class="cell"><label for="match">Match number:</label>
+                <input class="input" value="" id="match" type="number" placeholder="e.g. 15"><br></div>
+            <div class="cell"><label for="score">Total score:</label>
+                <input class="input" value="" id="score" type="number" placeholder="e.g. 2"><br></div>
             <div class="cell"><label for="swerve">Swerve notes:</label>
-                <input class="input" id="swerve" type="text" placeholder=""><br></div>
+                <input class="input" value="" id="swerve" type="text" placeholder=""><br></div>
             <div class="cell"><label for="defense">Defense notes:</label>
-                <input class="input" id="defense" type="text" placeholder=""><br></div>
+                <input class="input" value="" id="defense" type="text" placeholder=""><br></div>
             <div class="cell"><label for="offense">Offense notes:</label>
-                <input class="input" id="offense" type="text" placeholder=""><br></div>
+                <input class="input" value="" id="offense" type="text" placeholder=""><br></div>
             <div class="cell"><label class="checkbox is-size-6">
                 <input type="checkbox" id="dropped" />
                 Dropped items?
               </label></div>
             <div class="cell"><label class="checkbox is-size-6">
                 <input type="checkbox" id="died" />
-                Died?
+                Robot died?
               </label></div>
-            <div class="cell"><label for="drive">Drive rating (0-10):</label>
-                <input class="input" id="drive" type="number" placeholder="e.g. 4" max="10" min="0"><br></div>
-            <div class="cell"><label for="speed">Speed rating (0-10):</label>
-                <input class="input" id="speed" type="number" placeholder="e.g. 6" max="10" min="0"><br></div>
+            <div class="cell" min="0" max="10"><label for="drive">Drive rating (0-10):</label>
+                <input class="input" value="" id="drive" type="number" placeholder="e.g. 4" max="10" min="0"><br></div>
+            <div class="cell" min="0" max="10"><label for="speed">Speed rating (0-10):</label>
+                <input class="input" value="" id="speed" type="number" placeholder="e.g. 6" max="10" min="0"><br></div>
           </div>
         </label><br></div>
         <h2 class="subtitle is-2">Season-specific</h2>
         <div class="grid is-col-min-8">
+            <!--These are not in order for layout reasons-->
             <div class="cell"><label class="checkbox is-size-6">
                 <input type="checkbox" id="ss1" />
-                Speaker?
+                Robot closed totes?
             </label><br></div>
             <div class="cell"><label class="checkbox is-size-6">
                 <input type="checkbox" id="ss2" />
-                Amp?
+                Robot opened totes?
             </label><br></div>
             <div class="cell"><label class="checkbox is-size-6">
                 <input type="checkbox" id="ss3" />
-                Harmony?
+                Robot moved totes?
             </label><br></div>
             <div class="cell"><label class="checkbox is-size-6">
-                <input type="checkbox" id="ss4" />
-                Climb?
+                <input type="checkbox" id="ss6" />
+                Minibot closed totes?
             </label><br></div>
             <div class="cell"><label class="checkbox is-size-6">
-                <input type="checkbox" id="ss5" />
-                Trap?
+                <input type="checkbox" id="ss7" />
+                Minibot opened totes?
             </label><br></div>
-          </div>
-        <!--<label for="ss6" id="ss6-label" style="display:none">Disabled</label>
-        <input class="input" id="ss6" type="checkbox" style="display:none"><br style="display:none">
-        <label for="ss7" id="ss7-label" style="display:none">Disabled</label>
-        <input class="input" id="ss7" type="checkbox" style="display:none"><br style="display:none">
-        <label for="ss8" id="ss8-label" style="display:none">Disabled</label>
-        <input class="input" id="ss8" type="checkbox" style="display:none"><br style="display:none">
-        <label for="ss9" id="ss9-label" style="display:none">Disabled</label>
-        <input class="input" id="ss9" type="checkbox" style="display:none"><br style="display:none">
-        <label for="ss10" id="ss10-label" style="display:none">Disabled</label>
-        <input class="input" id="ss10" type="checkbox" style="display:none"><br style="display:none">
-    --><br>
-        <button onclick="document.getElementById('file-dialog').style.display='block';document.getElementById('file-dialog').style.animation='fade-in 1s';" class="button">Create file</button>
-        <button class="button">Add to local storage</button>
+            <div class="cell"><label class="checkbox is-size-6">
+                <input type="checkbox" id="ss8" />
+                Minibot moved totes? 
+            </label><br></div>
+            <div class="cell"><label for="ss4">Tote score:</label>
+                <input class="input" value="" id="ss4" type="number" placeholder="e.g. 9"><br></div>
+            <div class="cell"><label for="ss5">Low zone score:</label>
+                <input class="input" value="" id="ss5" type="number" placeholder="e.g. 6"><br></div>
+            <div class="cell"><label for="ss9">Minibot tote score:</label>
+                <input class="input" value="" id="ss9" type="number" placeholder="e.g. 5"><br></div>
+            <div class="cell"><label for="ss10">Minibot low zone score:</label>
+                <input class="input" value="" id="ss10" type="number" placeholder="e.g. 7"><br></div>
+            <div class="cell"><label for="ss11">Bunny low zone score:</label>
+                <input class="input" value="" id="ss11" type="number" placeholder="e.g. 3"><br></div>
+            <div class="cell"><label for="ss12">Bunny tote score:</label>
+                <input class="input" value="" id="ss12" type="number" placeholder="e.g. 1"><br></div>
+            <div class="cell"><label for="ss13">Strategy:</label>
+                <input class="input" value="" id="ss13" type="text" placeholder="" list="strats"><br></div>
+            <datalist id="strats">
+                <option>Tote thief</option>
+            </datalist>
+    <br>
+        </div>
+        <button onclick="window.scrollTo(0,0);importScoutingData();document.getElementById('file-dialog').style.display='block';document.getElementById('file-dialog').style.animation='fade-in 0.5s';" class="button">Create file</button>
+        <button id="qrcode" class="button" onclick="window.scrollTo(0,0);document.getElementById('import-dialog').style.display = 'block';">Import from file</button>
+        <button class="button" onclick="exportScoutingData();">Add to local storage</button>
         <button class="button" onclick="help();">Help</button>
-        <div id="qrcode"></div>
         <script src="qrcodejs/qrcode.js"></script>
         <script src="scripts.js"></script>
     </body>
